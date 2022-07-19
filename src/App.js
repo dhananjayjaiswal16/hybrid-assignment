@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+import React, { useContext } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import './App.css';
-
-function App() {
+import Home from './pages/Home';
+import Notfound from './pages/NotFound'
+import NewsState from './context/news/NewsState';
+import SingleNews from './components/news/SingleNews';
+import Alert from './components/Alert';
+import AlertState from './context/alert/AlertState';
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <NewsState>
+      <AlertState>
+        <Router>
+          <div className='App'>
+            <Navbar title="Hybrid Project" />
+            <div className="container">
+              <Alert />
+              <Switch>
+                <Route exact path='/' component={Home} />
+                <Route exact path="/news/:objectId"><SingleNews /></Route>
+                <Route component={Notfound} />
+              </Switch>
+            </div>
+          </div>
+        </Router>
+      </AlertState>
+    </NewsState>
   );
 }
 
