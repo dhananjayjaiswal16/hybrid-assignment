@@ -30,7 +30,7 @@ const Search = () => {
 
   const onBtnClick = () => {
     inputRef.current.value = "";
-    console.log("inputRef", inputRef);
+    // console.log("inputRef", inputRef);
     newsContext.clearNews();
   }
 

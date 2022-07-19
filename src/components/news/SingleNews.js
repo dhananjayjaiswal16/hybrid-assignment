@@ -5,7 +5,7 @@ import Spinner from '../Spinner';
 const SingleNews = () => {
   const newsContext = useContext(NewsContext);
   const { getSingleNews, singleNews, loading } = newsContext;
-  console.log("singleNews in singleNews.js ", singleNews?.children);
+  // console.log("singleNews in singleNews.js ", singleNews?.children);
 
   useEffect(() => {
     const query = window.location.pathname.substring(6);

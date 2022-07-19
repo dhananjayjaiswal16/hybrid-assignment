@@ -12,7 +12,7 @@ const Comments = ({ singleNews }) => {
         <div className="comments-text" onClick={() => setExpand(!expand)}>
           <img src={expand ? "/caret-down-solid.svg" : "/caret-right-solid.svg"} />
           <p>
-            {singleNews?.type === "comment" ? HTMLReactParser(singleNews?.text) : "Check out all the comments by clicking here"}
+            {singleNews?.type === "comment" ? (singleNews?.text && HTMLReactParser(singleNews?.text)) : "Check out all the comments by clicking here"}
           </p>
         </div>
         <div style={{ display: expand ? 'block' : 'none', paddingLeft: "25px" }}>{

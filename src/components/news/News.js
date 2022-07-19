@@ -8,7 +8,7 @@ const News = () => {
   const newsContext = useContext(NewsContext);
   const alertContext = useContext(AlertContext);
   const { news, loading } = newsContext;
-  console.log("news in News.js ", news);
+  // console.log("news in News.js ", news);
   if (loading) {
     return <Spinner />;
   }
