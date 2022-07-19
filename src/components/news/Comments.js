@@ -9,12 +9,12 @@ const Comments = ({ singleNews }) => {
   if (singleNews?.children && singleNews?.children.length > 0) {
     return (
       <div>
-        <p className="comments-text" onClick={() => setExpand(!expand)}>
+        <div className="comments-text" onClick={() => setExpand(!expand)}>
           <img src={expand ? "/caret-down-solid.svg" : "/caret-right-solid.svg"} />
           <p>
             {singleNews?.type === "comment" ? HTMLReactParser(singleNews?.text) : "Check out all the comments by clicking here"}
           </p>
-        </p>
+        </div>
         <div style={{ display: expand ? 'block' : 'none', paddingLeft: "25px" }}>{
           singleNews?.children?.map((child) => {
             return <Comments singleNews={child} />

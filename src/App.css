@@ -463,7 +463,6 @@ table th {
   border-radius: 15px;
   padding-left: 20px;
   margin-top: 10px;
-  display: flex;
 }
 .comments-text img {
   width: 10px;
